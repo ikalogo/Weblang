@@ -1,0 +1,9 @@
+/* variables */
+
+$main-font = Helvetica, sans-serif;
+$primary-font-color = #333;
+
+body {
+	font: 100% $main-font;
+	color: $primary-font-color;
+}
