@@ -1,3 +1,3 @@
 function double(n){
-	return n*3;
+	return n*n;
 } 
