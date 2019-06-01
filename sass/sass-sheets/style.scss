@@ -22,3 +22,23 @@ table.marks {
 		height: 50px;
 	}
 }
+
+/* partials */ 
+/* allow to include the source code from other sass/scss files */
+/* strict naming convention: prefix must be _ followed by any name */
+
+/* _global_spacing.scss 
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*/
+
+@import 'global_spacing';
+
+p.article{
+	font-size: 24px;
+	font-style: italic;
+}
