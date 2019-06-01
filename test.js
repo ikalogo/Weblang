@@ -5,3 +5,7 @@ function double(n){
 function triple(n){
 	return n*n*n
 }
+
+function square(n){
+	return Math.sqrt(n);
+}
