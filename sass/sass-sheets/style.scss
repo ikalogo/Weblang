@@ -55,3 +55,27 @@ p.article{
 div.notification{
 	@include box-shadow(0px 0px 3px #000);
 }
+
+/* Extend/Inheritance and Placeholder classes */
+/* these allow to declare a set of simple attributes and apply them any class that needs them */
+
+%message-box {
+	min-width: 350px;
+	border-radius: 3px;
+	border-style: 1px solid #000;
+}
+
+%light-form{
+	min-height: 550px;
+	border-style: 1px dashed #333;
+}
+
+.error-msg{
+	@extend %message-box;
+	background-color: red;
+}
+
+.info-msg{
+	@extend %message-box;
+	background-color: azure;
+}
