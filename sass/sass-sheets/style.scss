@@ -1,0 +1,99 @@
+/* refer to full guide at: https://sass-lang.com/guide */
+
+/* variables */
+
+$main-font: Helvetica, sans-serif;
+$primary-font-color: #333;
+
+body {
+	font: 100% $main-font;
+	color: $primary-font-color;
+}
+
+/* nesting */
+
+table.marks {
+	tr {
+		background-color:red;
+	}
+
+	td {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+/* partials */ 
+/* allow to include the source code from other sass/scss files */
+/* strict naming convention: prefix must be _ followed by any name */
+
+/* _global_spacing.scss 
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*/
+
+@import 'global_spacing';
+
+p.article{
+	font-size: 24px;
+	font-style: italic;
+}
+
+/* mixins */
+/* they act like functions */
+
+@mixin box-shadow ($value) {
+	-webkit-box-shadow: $value;
+	-moz-box-shadow: $value;
+	box-shadow: $value;
+}
+
+div.notification{
+	@include box-shadow(0px 0px 3px #000);
+}
+
+/* Extend/Inheritance and Placeholder classes */
+/* these allow to declare a set of simple attributes and apply them any class that needs them */
+
+%message-box {
+	min-width: 350px;
+	border-radius: 3px;
+	border-style: 1px solid #000;
+}
+
+%light-form{
+	min-height: 550px;
+	border-style: 1px dashed #333;
+}
+
+.error-msg{
+	@extend %message-box;
+	background-color: red;
+}
+
+.info-msg{
+	@extend %message-box;
+	background-color: azure;
+}
+
+/* Operands */
+
+.container {
+
+	width: 100%;
+
+	article{
+		float: right;
+		width: 600px/960px * 100;
+	}
+
+	aside{
+		float: left;
+		width: 300px/960px * 100;
+	}
+
+}
